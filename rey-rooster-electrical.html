@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Rey Rooster Electrical | Atlanta, GA</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Oswald:wght@400;500;600;700&family=Lora:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --red:       #b92a2a;
+  --red-dark:  #8c1c1c;
+  --red-deep:  #5e0f0f;
+  --cream:     #f4efe6;
+  --cream-dim: #e8e0d0;
+  --cream-dark:#cfc5b0;
+  --charcoal:  #1e1c1a;
+  --coal:      #141210;
+  --smoke:     #2e2b28;
+  --ash:       #6b6560;
+  --tan:       #c9b99a;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Lora', Georgia, serif;
+  background: var(--coal);
+  color: var(--cream);
+  overflow-x: hidden;
+}
+
+/* ── TEXTURE OVERLAY ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='transparent'/%3E%3Crect width='1' height='1' fill='rgba(0,0,0,0.12)'/%3E%3C/svg%3E");
+  opacity: 0.4;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 3rem;
+  height: 72px;
+  background: rgba(20,18,16,0.96);
+  border-bottom: 2px solid var(--red-dark);
+}
+
+.logo {
+  display: flex; align-items: center; gap: 14px;
+}
+
+.logo-rooster {
+  width: 42px; height: 42px;
+  flex-shrink: 0;
+}
+
+.logo-text {
+  display: flex; flex-direction: column; line-height: 1;
+}
+
+.logo-top {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 1.45rem;
+  letter-spacing: 0.02em;
+  color: var(--cream);
+}
+
+.logo-top span { color: var(--red); }
+
+.logo-sub {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--tan);
+  margin-top: 2px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex; align-items: center; gap: 2.2rem;
+}
+
+nav ul a {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--tan);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+nav ul a:hover { color: var(--cream); }
+
+.nav-cta {
+  background: var(--red) !important;
+  color: var(--cream) !important;
+  padding: 9px 22px !important;
+  border: 2px solid var(--red-dark) !important;
+  font-weight: 700 !important;
+  transition: background 0.2s !important;
+}
+
+.nav-cta:hover { background: var(--red-dark) !important; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  padding-top: 72px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  background: var(--charcoal);
+}
+
+.hero-bg-left {
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  width: 50%;
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0px, transparent 18px,
+      rgba(185,42,42,0.04) 18px, rgba(185,42,42,0.04) 20px
+    ),
+    var(--coal);
+}
+
+.hero-bg-right {
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: 50%;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      transparent 0px, transparent 28px,
+      rgba(255,255,255,0.015) 28px, rgba(255,255,255,0.015) 30px
+    ),
+    var(--smoke);
+}
+
+.hero-divider {
+  position: absolute;
+  left: 50%;
+  top: 0; bottom: 0;
+  width: 4px;
+  background: var(--red);
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.hero-left {
+  position: relative; z-index: 3;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 5rem 4rem 5rem 5rem;
+}
+
+.hero-eyebrow {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: 0.78rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 1.5rem;
+  display: flex; align-items: center; gap: 12px;
+}
+
+.hero-eyebrow::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--red-dark);
+  max-width: 80px;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(3rem, 5.5vw, 5.2rem);
+  line-height: 1;
+  margin-bottom: 1.8rem;
+  letter-spacing: -0.01em;
+}
+
+h1 .accent { color: var(--red); display: block; }
+
+h1 .sub-line {
+  font-weight: 700;
+  font-size: 0.52em;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--tan);
+  display: block;
+  margin-top: 0.4rem;
+}
+
+.hero-desc {
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  color: #9a9188;
+  line-height: 1.8;
+  max-width: 400px;
+  margin-bottom: 2.5rem;
+}
+
+.btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.btn-red {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 14px 34px;
+  background: var(--red);
+  color: var(--cream);
+  border: 2px solid var(--red-dark);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btn-red:hover { background: var(--red-dark); transform: translateY(-2px); }
+
+.btn-ghost {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 12px 34px;
+  background: transparent;
+  color: var(--cream);
+  border: 2px solid rgba(255,255,255,0.2);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-ghost:hover { border-color: var(--tan); color: var(--tan); }
+
+.hero-stats {
+  display: flex; gap: 2rem;
+  margin-top: 3.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 2.6rem;
+  color: var(--cream);
+  line-height: 1;
+}
+
+.stat-num sup {
+  font-size: 1.2rem;
+  color: var(--red);
+  vertical-align: super;
+}
+
+.stat-label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.72rem;
+  color: var(--ash);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+
+.hero-right {
+  position: relative; z-index: 3;
+  display: flex; align-items: center; justify-content: center;
+  padding: 5rem 4rem;
+}
+
+.hero-emblem {
+  display: flex; flex-direction: column; align-items: center; gap: 1.5rem;
+  text-align: center;
+}
+
+.emblem-ring {
+  width: 220px; height: 220px;
+  border: 3px solid var(--red-dark);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  background: rgba(185,42,42,0.06);
+}
+
+.emblem-ring::before {
+  content: '';
+  position: absolute;
+  inset: 10px;
+  border: 1px solid rgba(185,42,42,0.2);
+  border-radius: 50%;
+}
+
+.emblem-inner {
+  display: flex; flex-direction: column; align-items: center;
+}
+
+.emblem-icon {
+  font-size: 5rem;
+  line-height: 1;
+  filter: drop-shadow(0 0 12px rgba(185,42,42,0.4));
+}
+
+.emblem-label {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-top: 8px;
+}
+
+.emblem-since {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--tan);
+}
+
+.emblem-services {
+  display: flex; flex-direction: column; gap: 10px; margin-top: 0.5rem;
+}
+
+.emblem-service {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tan);
+  padding: 8px 28px;
+  border: 1px solid rgba(185,42,42,0.3);
+  background: rgba(185,42,42,0.07);
+  text-align: center;
+}
+
+/* ── BANNER ── */
+.banner {
+  background: var(--red);
+  padding: 1.1rem 3rem;
+  display: flex; align-items: center; gap: 2.5rem;
+  overflow: hidden;
+  border-top: 3px solid var(--red-deep);
+  border-bottom: 3px solid var(--red-deep);
+}
+
+.banner-item {
+  display: flex; align-items: center; gap: 10px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cream);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.banner-sep {
+  color: rgba(255,255,255,0.4);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+/* ── SERVICES ── */
+.services {
+  background: var(--cream);
+  color: var(--charcoal);
+  padding: 6rem 5rem;
+}
+
+.section-eyebrow {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 0.7rem;
+  display: flex; align-items: center; gap: 10px;
+}
+
+.section-eyebrow::before {
+  content: '';
+  width: 28px; height: 2px;
+  background: var(--red);
+  flex-shrink: 0;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  line-height: 1.05;
+  color: var(--charcoal);
+  margin-bottom: 0.8rem;
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--red);
+}
+
+.section-sub {
+  font-family: 'Lora', serif;
+  color: var(--ash);
+  font-size: 0.98rem;
+  line-height: 1.8;
+  max-width: 520px;
+  margin-bottom: 3.5rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--cream-dark);
+  border: 2px solid var(--cream-dark);
+}
+
+.service-card {
+  background: var(--cream);
+  padding: 2.8rem 2.2rem;
+  position: relative;
+  transition: background 0.2s;
+}
+
+.service-card:hover { background: #fffdf8; }
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--red);
+}
+
+.service-num {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 4rem;
+  color: rgba(185,42,42,0.1);
+  line-height: 1;
+  margin-bottom: -0.5rem;
+}
+
+.service-icon-wrap {
+  width: 56px; height: 56px;
+  background: var(--red);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.4rem;
+  font-size: 1.6rem;
+}
+
+.service-name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--charcoal);
+  margin-bottom: 0.8rem;
+}
+
+.service-desc {
+  font-family: 'Lora', serif;
+  color: var(--ash);
+  font-size: 0.88rem;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+
+.service-list {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 7px;
+}
+
+.service-list li {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  color: #5a5450;
+  display: flex; align-items: center; gap: 9px;
+}
+
+.service-list li::before {
+  content: '';
+  width: 8px; height: 2px;
+  background: var(--red);
+  flex-shrink: 0;
+}
+
+/* ── WHY US ── */
+.why {
+  background: var(--charcoal);
+  padding: 6rem 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.why .section-eyebrow { color: var(--red); }
+.why .section-eyebrow::before { background: var(--red); }
+.why .section-title { color: var(--cream); }
+.why .section-sub { color: var(--ash); }
+
+.why-features { display: flex; flex-direction: column; gap: 1.8rem; }
+
+.why-feature {
+  display: flex; gap: 1.2rem; align-items: flex-start;
+  border-left: 3px solid var(--red-dark);
+  padding-left: 1.4rem;
+}
+
+.why-feature-icon {
+  width: 46px; height: 46px; flex-shrink: 0;
+  background: rgba(185,42,42,0.1);
+  border: 1px solid rgba(185,42,42,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem;
+}
+
+.why-feature-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--cream);
+  margin-bottom: 5px;
+}
+
+.why-feature-desc {
+  font-family: 'Lora', serif;
+  font-size: 0.87rem;
+  color: var(--ash);
+  line-height: 1.7;
+}
+
+/* ── EV SECTION ── */
+.ev-section {
+  background: var(--coal);
+  padding: 6rem 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  border-top: 4px solid var(--red-dark);
+}
+
+.ev-visual {
+  background: var(--smoke);
+  border: 2px solid rgba(185,42,42,0.2);
+  padding: 3rem 2rem;
+  display: flex; flex-direction: column; align-items: center; gap: 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ev-visual::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--red);
+}
+
+.ev-big-icon {
+  font-size: 5rem;
+  line-height: 1;
+  filter: drop-shadow(0 0 16px rgba(185,42,42,0.5));
+}
+
+.ev-visual-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 1.8rem;
+  color: var(--cream);
+}
+
+.ev-tags {
+  display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;
+}
+
+.ev-tag {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border: 1px solid rgba(185,42,42,0.4);
+  color: var(--red);
+  background: rgba(185,42,42,0.08);
+}
+
+.ev-numbers {
+  display: flex; gap: 2rem;
+}
+
+.ev-stat-num {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 2.2rem;
+  color: var(--cream);
+}
+
+.ev-stat-label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ash);
+  margin-top: 3px;
+}
+
+.ev-content .section-eyebrow { color: var(--red); }
+.ev-content .section-eyebrow::before { background: var(--red); }
+.ev-content .section-title { color: var(--cream); }
+.ev-content .section-sub { color: var(--ash); }
+
+.ev-points { display: flex; flex-direction: column; gap: 12px; }
+
+.ev-point {
+  display: flex; gap: 12px; align-items: flex-start;
+}
+
+.ev-point-dot {
+  width: 10px; height: 10px;
+  background: var(--red);
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.ev-point p {
+  font-family: 'Lora', serif;
+  font-size: 0.92rem;
+  color: var(--ash);
+  line-height: 1.65;
+}
+
+/* ── TESTIMONIALS ── */
+.testimonials {
+  background: var(--cream);
+  padding: 6rem 5rem;
+}
+
+.testimonials .section-title { color: var(--charcoal); }
+.testimonials .section-eyebrow::before { background: var(--red); }
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.testimonial-card {
+  background: white;
+  border: 1px solid var(--cream-dark);
+  border-top: 4px solid var(--red);
+  padding: 2rem;
+}
+
+.stars {
+  color: var(--red);
+  font-size: 0.85rem;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+}
+
+.testimonial-text {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  color: #5a5450;
+  font-size: 0.92rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-author {
+  display: flex; align-items: center; gap: 12px;
+}
+
+.author-initials {
+  width: 42px; height: 42px;
+  background: var(--red);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 1rem;
+  color: var(--cream);
+  flex-shrink: 0;
+}
+
+.author-name {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  color: var(--charcoal);
+  text-transform: uppercase;
+}
+
+.author-role {
+  font-family: 'Lora', serif;
+  font-size: 0.78rem;
+  color: var(--ash);
+  margin-top: 2px;
+}
+
+/* ── CONTACT / CTA ── */
+.cta-section {
+  background: var(--red-deep);
+  padding: 5.5rem 5rem;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  border-top: 4px solid var(--red-dark);
+}
+
+.cta-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  color: var(--cream);
+  line-height: 1.05;
+  margin-bottom: 1rem;
+}
+
+.cta-title em {
+  font-style: italic;
+  color: var(--tan);
+}
+
+.cta-sub {
+  font-family: 'Lora', serif;
+  font-size: 0.98rem;
+  color: rgba(244,239,230,0.65);
+  line-height: 1.7;
+}
+
+.cta-actions {
+  display: flex; flex-direction: column; gap: 1rem;
+}
+
+.cta-phone {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 2.2rem;
+  color: var(--cream);
+  text-decoration: none;
+  display: flex; align-items: center; gap: 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  padding-bottom: 1rem;
+}
+
+.cta-phone:hover { color: var(--tan); }
+
+.cta-phone-label {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--tan);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.cta-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.btn-cream {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 0.88rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 13px 30px;
+  background: var(--cream);
+  color: var(--red-deep);
+  border: 2px solid var(--cream);
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-cream:hover { background: var(--cream-dim); }
+
+.btn-outline-cream {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 0.88rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 11px 30px;
+  background: transparent;
+  color: var(--cream);
+  border: 2px solid rgba(244,239,230,0.35);
+  text-decoration: none;
+  display: inline-block;
+  transition: border-color 0.2s;
+}
+
+.btn-outline-cream:hover { border-color: var(--cream); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--coal);
+  border-top: 3px solid var(--red-dark);
+  padding: 4rem 5rem 2rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+}
+
+.footer-brand p {
+  font-family: 'Lora', serif;
+  color: var(--ash);
+  font-size: 0.88rem;
+  line-height: 1.8;
+  margin-top: 1rem;
+  max-width: 280px;
+}
+
+.footer-license {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  margin-top: 1.2rem;
+}
+
+.lic-badge {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border: 1px solid rgba(185,42,42,0.3);
+  color: rgba(185,42,42,0.6);
+}
+
+.footer-col h4 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cream);
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+
+.footer-col ul a {
+  font-family: 'Lora', serif;
+  font-size: 0.88rem;
+  color: var(--ash);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-col ul a:hover { color: var(--cream); }
+
+.footer-bottom {
+  background: var(--coal);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 1.4rem 5rem;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.footer-bottom p {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  color: #3a3734;
+}
+
+.footer-bottom span { color: var(--red); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">
+    <svg class="logo-rooster" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="21" cy="21" r="20" fill="rgba(185,42,42,0.15)" stroke="#8c1c1c" stroke-width="1.5"/>
+      <!-- Rooster silhouette simplified -->
+      <ellipse cx="21" cy="26" rx="8" ry="7" fill="#b92a2a"/>
+      <ellipse cx="21" cy="17" rx="5" ry="5.5" fill="#b92a2a"/>
+      <!-- Comb -->
+      <path d="M18 12 Q19 9 20 12 Q21 8 22 12 Q23 10 24 12" stroke="#f5c518" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <!-- Beak -->
+      <path d="M24 17 L27 18 L24 19" fill="#f5c518"/>
+      <!-- Tail feathers -->
+      <path d="M13 22 Q10 18 11 15 Q13 20 15 22" fill="#8c1c1c"/>
+      <path d="M13 25 Q9 22 10 18 Q12 23 14 25" fill="#6b1414"/>
+      <!-- Eye -->
+      <circle cx="23" cy="16" r="1.2" fill="#f4efe6"/>
+      <circle cx="23.3" cy="16" r="0.5" fill="#141210"/>
+      <!-- Wattle -->
+      <ellipse cx="25" cy="19" rx="1.5" ry="2" fill="#d43a3a" opacity="0.8"/>
+      <!-- Leg/spur -->
+      <line x1="19" y1="33" x2="18" y2="38" stroke="#8c1c1c" stroke-width="2" stroke-linecap="round"/>
+      <line x1="23" y1="33" x2="24" y2="38" stroke="#8c1c1c" stroke-width="2" stroke-linecap="round"/>
+      <!-- Bolt on body -->
+      <path d="M22 22 L20 26 L22 26 L20 30 L23 25 L21 25 Z" fill="#f5c518" opacity="0.9"/>
+    </svg>
+    <div class="logo-text">
+      <div class="logo-top">Rey <span>Rooster</span></div>
+      <div class="logo-sub">Electrical · Atlanta, GA</div>
+    </div>
+  </div>
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#ev">EV Charging</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="tel:6788877291" class="nav-cta">Call Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg-left"></div>
+  <div class="hero-bg-right"></div>
+  <div class="hero-divider"></div>
+
+  <div class="hero-left">
+    <div class="hero-eyebrow">Atlanta's Trusted Electricians</div>
+    <h1>
+      Power Done
+      <span class="accent">Right.</span>
+      <span class="sub-line">Every Wire. Every Time.</span>
+    </h1>
+    <p class="hero-desc">
+      Commercial buildouts, residential service, and EV charger installations —
+      handled by a local Atlanta crew that takes pride in clean, code-compliant work.
+      No shortcuts. No excuses. Just solid electrical.
+    </p>
+    <div class="btn-group">
+      <a href="tel:6788877291" class="btn-red">📞 Call (678) 887-7291</a>
+      <a href="#services" class="btn-ghost">Our Services</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">2,000<sup>+</sup></div>
+        <div class="stat-label">Jobs Done</div>
+      </div>
+      <div>
+        <div class="stat-num">20<sup>yr</sup></div>
+        <div class="stat-label">Experience</div>
+      </div>
+      <div>
+        <div class="stat-num">5<sup>★</sup></div>
+        <div class="stat-label">Rated Service</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-emblem">
+      <div class="emblem-ring">
+        <div class="emblem-inner">
+          <div class="emblem-icon">🐓</div>
+          <div class="emblem-label">Rey Rooster Electric</div>
+        </div>
+      </div>
+      <div class="emblem-since">Serving Atlanta since 2003</div>
+      <div class="emblem-services">
+        <div class="emblem-service">⚡ Residential Electrical</div>
+        <div class="emblem-service">🏗 Commercial Electrical</div>
+        <div class="emblem-service">🔋 EV Charger Installs</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BANNER -->
+<div class="banner">
+  <div class="banner-item">✔ Licensed &amp; Insured</div>
+  <div class="banner-sep">·</div>
+  <div class="banner-item">✔ Code Compliant</div>
+  <div class="banner-sep">·</div>
+  <div class="banner-item">✔ Free Estimates</div>
+  <div class="banner-sep">·</div>
+  <div class="banner-item">✔ EV Certified Installer</div>
+  <div class="banner-sep">·</div>
+  <div class="banner-item">✔ 24/7 Emergency Line</div>
+  <div class="banner-sep">·</div>
+  <div class="banner-item">✔ Atlanta &amp; Metro Area</div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-eyebrow">What We Do</div>
+  <div class="section-title">Our <em>Services</em></div>
+  <p class="section-sub">
+    From a single outlet to a full commercial electrical system — Rey Rooster handles it all with the same care and craftsmanship on every job.
+  </p>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <div class="service-icon-wrap">🏠</div>
+      <div class="service-name">Residential</div>
+      <p class="service-desc">Your home deserves electrical work done right the first time. From panel upgrades to full rewires, we keep your family safe and your lights on.</p>
+      <ul class="service-list">
+        <li>Panel upgrades &amp; replacements</li>
+        <li>Full home rewiring</li>
+        <li>New construction wiring</li>
+        <li>Outlet &amp; fixture installation</li>
+        <li>Generator hookups</li>
+        <li>Smart home &amp; lighting</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <div class="service-icon-wrap">🏗</div>
+      <div class="service-name">Commercial</div>
+      <p class="service-desc">We wire offices, warehouses, retail centers, and industrial facilities. On schedule, up to code, and built to run for decades.</p>
+      <ul class="service-list">
+        <li>Commercial panel &amp; switchgear</li>
+        <li>Tenant improvement buildouts</li>
+        <li>Three-phase power systems</li>
+        <li>LED lighting retrofits</li>
+        <li>Code compliance inspections</li>
+        <li>Preventive maintenance plans</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <div class="service-icon-wrap">⚡</div>
+      <div class="service-name">EV Charging</div>
+      <p class="service-desc">Certified EV charger installation for homes, apartment complexes, and commercial parking — Level 1, Level 2, and DC Fast Charge.</p>
+      <ul class="service-list">
+        <li>Home Level 2 charger install</li>
+        <li>Multi-unit property arrays</li>
+        <li>Commercial fleet charging</li>
+        <li>Load balancing systems</li>
+        <li>All major brands supported</li>
+        <li>Tax rebate guidance</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why" id="about">
+  <div>
+    <div class="section-eyebrow">Why Rey Rooster</div>
+    <div class="section-title" style="color:var(--cream);">Built on <em style="color:var(--red);">Honesty.</em><br>Backed by <em style="color:var(--red);">Craft.</em></div>
+    <p class="section-sub">We're a local Atlanta electrical company — not a franchise, not a call center. Every job is handled by our licensed in-house crew. You'll get straight answers, fair prices, and work that holds up.</p>
+    <a href="#contact" class="btn-red" style="margin-top:2rem; display:inline-block;">Schedule a Free Estimate</a>
+  </div>
+
+  <div class="why-features">
+    <div class="why-feature">
+      <div class="why-feature-icon">🏅</div>
+      <div>
+        <div class="why-feature-title">Licensed Master Electricians</div>
+        <div class="why-feature-desc">Every technician on your property is state-licensed and up to date on the latest Georgia electrical code.</div>
+      </div>
+    </div>
+    <div class="why-feature">
+      <div class="why-feature-icon">📋</div>
+      <div>
+        <div class="why-feature-title">Upfront, Flat-Rate Pricing</div>
+        <div class="why-feature-desc">You get a written quote before we touch a wire. No hidden fees, no surprise charges when the invoice arrives.</div>
+      </div>
+    </div>
+    <div class="why-feature">
+      <div class="why-feature-icon">🐓</div>
+      <div>
+        <div class="why-feature-title">Local Atlanta Company</div>
+        <div class="why-feature-desc">We live and work here. Your home is in our neighborhood — and we treat it that way.</div>
+      </div>
+    </div>
+    <div class="why-feature">
+      <div class="why-feature-icon">🛡</div>
+      <div>
+        <div class="why-feature-title">2-Year Workmanship Warranty</div>
+        <div class="why-feature-desc">If something isn't right with our work, we come back and fix it. No arguments, no charge.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EV SECTION -->
+<section class="ev-section" id="ev">
+  <div class="ev-visual">
+    <div class="ev-big-icon">⚡🔋</div>
+    <div class="ev-visual-title">EV Charger<br>Installation</div>
+    <div class="ev-tags">
+      <div class="ev-tag">Level 1</div>
+      <div class="ev-tag">Level 2</div>
+      <div class="ev-tag">DC Fast Charge</div>
+    </div>
+    <div class="ev-numbers">
+      <div>
+        <div class="ev-stat-num">500+</div>
+        <div class="ev-stat-label">Installs Done</div>
+      </div>
+      <div>
+        <div class="ev-stat-num">48h</div>
+        <div class="ev-stat-label">Avg Turnaround</div>
+      </div>
+    </div>
+    <p style="font-family:'Lora',serif; font-size:0.8rem; color:var(--ash);">Tesla · ChargePoint · Blink · Wallbox · Enel X · Grizzl-E</p>
+  </div>
+
+  <div class="ev-content">
+    <div class="section-eyebrow">EV Charging</div>
+    <div class="section-title" style="color:var(--cream);">Charge <em style="color:var(--red);">Smarter</em> at Home &amp; Work</div>
+    <p class="section-sub">Whether you just picked up your first EV or you're building out a commercial fleet charging station, Rey Rooster gets it done — permitted, inspected, and guaranteed.</p>
+    <div class="ev-points">
+      <div class="ev-point">
+        <div class="ev-point-dot"></div>
+        <p>Level 2 home charger installs completed same week — typically done in 4–6 hours</p>
+      </div>
+      <div class="ev-point">
+        <div class="ev-point-dot"></div>
+        <p>Commercial and multi-unit arrays with smart load balancing and usage monitoring</p>
+      </div>
+      <div class="ev-point">
+        <div class="ev-point-dot"></div>
+        <p>We handle the permit pulling, inspection scheduling, and final sign-off for you</p>
+      </div>
+      <div class="ev-point">
+        <div class="ev-point-dot"></div>
+        <p>Guidance on Georgia Power rebates and federal tax incentives — real savings, made easy</p>
+      </div>
+    </div>
+    <a href="#contact" class="btn-red" style="margin-top:2rem; display:inline-block;">Get EV Charger Quote</a>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="section-eyebrow">Client Reviews</div>
+  <div class="section-title">What Atlanta <em>Says</em></div>
+  <p class="section-sub" style="margin-bottom:3rem;">Don't take our word for it — here's what our neighbors across the metro have experienced.</p>
+
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">"Rey Rooster rewired our entire 1940s bungalow in Decatur. The crew was clean, respectful, and the work passed inspection without a single item called out. That's rare."</p>
+      <div class="testimonial-author">
+        <div class="author-initials">TW</div>
+        <div>
+          <div class="author-name">Thomas W.</div>
+          <div class="author-role">Homeowner, Decatur, GA</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">"Got two Level 2 EV chargers installed in my garage for my Tesla and my wife's Rivian. Done in half a day, everything's been flawless for 8 months. Couldn't be happier."</p>
+      <div class="testimonial-author">
+        <div class="author-initials">MR</div>
+        <div>
+          <div class="author-name">Marcus R.</div>
+          <div class="author-role">Homeowner, Sandy Springs, GA</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">"We hired Rey Rooster for our new restaurant buildout in Buckhead — full commercial kitchen and dining room electrical. On budget, on time, no drama. We'll use them again."</p>
+      <div class="testimonial-author">
+        <div class="author-initials">LK</div>
+        <div>
+          <div class="author-name">Lisa K.</div>
+          <div class="author-role">Restaurant Owner, Buckhead, GA</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / CONTACT -->
+<section class="cta-section" id="contact">
+  <div>
+    <div class="cta-title">Ready to Get the <em>Job Done?</em></div>
+    <p class="cta-sub">Call us today for a free, no-pressure estimate. Most jobs quoted same day. Serving Atlanta, Decatur, Sandy Springs, Marietta, Alpharetta, and surrounding metro areas.</p>
+  </div>
+  <div class="cta-actions">
+    <div>
+      <div class="cta-phone-label">Call or Text Anytime</div>
+      <a href="tel:6788877291" class="cta-phone">📞 (678) 887-7291</a>
+    </div>
+    <div class="cta-btns">
+      <a href="mailto:info@reyroosterelectric.com" class="btn-cream">Email Us</a>
+      <a href="#services" class="btn-outline-cream">View Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <div class="logo">
+      <svg style="width:36px;height:36px;" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="21" cy="21" r="20" fill="rgba(185,42,42,0.15)" stroke="#8c1c1c" stroke-width="1.5"/>
+        <ellipse cx="21" cy="26" rx="8" ry="7" fill="#b92a2a"/>
+        <ellipse cx="21" cy="17" rx="5" ry="5.5" fill="#b92a2a"/>
+        <path d="M18 12 Q19 9 20 12 Q21 8 22 12 Q23 10 24 12" stroke="#f5c518" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <path d="M24 17 L27 18 L24 19" fill="#f5c518"/>
+        <path d="M13 22 Q10 18 11 15 Q13 20 15 22" fill="#8c1c1c"/>
+        <circle cx="23" cy="16" r="1.2" fill="#f4efe6"/>
+        <circle cx="23.3" cy="16" r="0.5" fill="#141210"/>
+        <ellipse cx="25" cy="19" rx="1.5" ry="2" fill="#d43a3a" opacity="0.8"/>
+        <line x1="19" y1="33" x2="18" y2="38" stroke="#8c1c1c" stroke-width="2" stroke-linecap="round"/>
+        <line x1="23" y1="33" x2="24" y2="38" stroke="#8c1c1c" stroke-width="2" stroke-linecap="round"/>
+        <path d="M22 22 L20 26 L22 26 L20 30 L23 25 L21 25 Z" fill="#f5c518" opacity="0.9"/>
+      </svg>
+      <div class="logo-text">
+        <div class="logo-top">Rey <span>Rooster</span></div>
+        <div class="logo-sub">Electrical · Atlanta, GA</div>
+      </div>
+    </div>
+    <p>Licensed, insured electrical contractor serving the greater Atlanta metro. Commercial, residential, and EV charging done right — every time.</p>
+    <div class="footer-license">
+      <div class="lic-badge">Lic #EL-2903-GA</div>
+      <div class="lic-badge">Fully Insured</div>
+      <div class="lic-badge">EV Certified</div>
+    </div>
+  </div>
+
+  <div class="footer-col">
+    <h4>Services</h4>
+    <ul>
+      <li><a href="#services">Residential</a></li>
+      <li><a href="#services">Commercial</a></li>
+      <li><a href="#ev">EV Chargers</a></li>
+      <li><a href="#services">Panel Upgrades</a></li>
+      <li><a href="#services">Lighting &amp; Fixtures</a></li>
+      <li><a href="#services">Generator Hookups</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-col">
+    <h4>Company</h4>
+    <ul>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#about">Our Crew</a></li>
+      <li><a href="#">Service Areas</a></li>
+      <li><a href="#">Careers</a></li>
+      <li><a href="#">Reviews</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-col">
+    <h4>Contact</h4>
+    <ul>
+      <li><a href="tel:6788877291">(678) 887-7291</a></li>
+      <li><a href="mailto:info@reyroosterelectric.com">info@reyroosterelectric.com</a></li>
+      <li><a href="#">Atlanta, Georgia</a></li>
+      <li><a href="#">Mon–Sat: 7am–7pm</a></li>
+      <li><a href="tel:6788877291">24/7 Emergency Line</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div class="footer-bottom">
+  <p>© 2026 <span>Rey Rooster Electrical</span>. All rights reserved. Atlanta, GA.</p>
+  <p>Licensed &amp; Insured · Serving Metro Atlanta</p>
+</div>
+
+</body>
+</html>
